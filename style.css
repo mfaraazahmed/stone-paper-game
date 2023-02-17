@@ -1,11 +1,11 @@
-#options{
+#images #options{
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
 }
 
-#options img{
+#images img, #options img{
     width: 100px;
     height: 100px;
 }
