@@ -2,36 +2,54 @@ let playerScore = 0;
 let computerScore = 0;
 let round = 0;
 
-
 function playRound(){
 
     let computerChoice ;
     let playerChoice ;
 
+    // Display images and options when round is > 0
+    const options = document.getElementById('images');
+    options.style.display = 'flex';
+
     // Random computer selection
     const randChoice = Math.ceil(Math.random() * 3);
+
+    // Update the computer images based on the selected options
+    const computerImg = document.getElementById("computer-img");
     if(randChoice == 1){
         computerChoice = 'rock';
+        computerImg.src = 'rock.png';
     } else if( randChoice == 2){
         computerChoice = 'paper';
+        computerImg.src = 'paper.png';
     } else {
         computerChoice = 'scissor';
+        computerImg.src = 'scissor.png';
     }
 
     // User manual selection
     // Get the data-value attribute of the clicked image
     const value = event.target.getAttribute('data-value');
 
+    // Update the player images based on the selected options
+    const playerImg = document.getElementById("player-img");
+
     // Set userChoice to the corresponding number
     if (value === '1') {
         playerChoice = 'rock';
+        playerImg.src = 'rock.png';
     } else if (value === '2') {
         playerChoice = 'paper';
+        playerImg.src = 'paper.png';
     } else if (value === '3') {
         playerChoice = 'scissor';
+        playerImg.src = 'scissor.png';
     }
     console.log('user choice : '+playerChoice+', cup choice : '+computerChoice);
 
+    playerImg.style.display = 'block';
+    computerImg.style.display = 'block';
+    
     // winning and loosing conditions
     if(
         playerChoice == 'rock' && computerChoice == 'scissor' ||
@@ -53,6 +71,10 @@ function playRound(){
 
     console.log('player score : '+playerScore+', cpu score : '+computerScore);
     round = round + 1;
+
+    // Display scores
+    const scoreDiv = document.getElementById('score');
+    scoreDiv.innerText = 'Player score : '+playerScore+'\nComputer score : '+computerScore;
 
     console.log(round);
 
