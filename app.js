@@ -1,5 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
+let updatedPlayerScore = 0;
+let updatedComputerScore = 0;
+const readlineSync = require('readline-sync');
 
 function getComputerSelection(){
     let computerChoice = null;
@@ -15,21 +18,49 @@ function getComputerSelection(){
     return computerChoice;
 }
 
-function playRound(playerSelection, computerSelection, playerScore, computerScore){
-    let updatePlayerScore = playerScore;
-    let updateComputerScore = computerScore;
-    console.log(playerSelection, computerSelection)
-    if(playerSelection == 'rock' && computerSelection =='scissor' || playerSelection == 'paper' && computerSelection == 'rock' || playerSelection == 'scissor' && computerSelection == 'paper'){
-        console.log (updatePlayerScore = updatePlayerScore + 1, updateComputerScore);
-    } else if(playerSelection == 'rock' && computerSelection == 'rock' || playerSelection == 'paper' && computerSelection == 'paper' || playerSelection == 'scissor' && computerSelection == 'scissor'){
-        console.log (updatePlayerScore, updateComputerScore);
-    } else if(playerSelection == 'scissor' && computerSelection == 'rock' || playerSelection == 'paper' && computerSelection == 'scissor' || playerSelection == 'rock' && computerSelection == 'paper'){
-        console.log (updatePlayerScore ,updateComputerScore = updateComputerScore + 1);
+function getUserSelection(userChoice){
+    if(userChoice == 1){
+        userChoice = 'rock';
+    } else if(userChoice == 2){
+        userChoice = 'paper';
+    } else if(userChoice == 3){
+        userChoice = 'scissor';
+    }
+    return userChoice;
+}
+
+function playRound(userSelection, computerSelection){
+    if(userSelection == 'rock' && computerSelection == 'sciccor' || userSelection == 'paper' && computerSelection == 'rock' || userSelection == 'scissor' && computerSelection == 'paper'){
+        return 1;
+    } else if(userSelection == 'scissor' && computerSelection == 'rock' || userSelection == 'rock' && computerSelection == 'paper' || userSelection == 'paper' && computerSelection == 'scissor'){
+        return 0;      
     } else {
-        console.log('invalid choice');
+        return null;
     }
 }
 
-const playerSelection = 'rock'
-const computerSelection = getComputerSelection();
-console.log(playRound(playerSelection, computerSelection, playerScore, computerScore))
+for(let i = 0; i < 5; i++){
+    const computerSelection = getComputerSelection();
+    let userChoice = readlineSync.question('enter 1 for rock\nenter 2 for paper\nenter 3 for scissor\n');
+    const userSelection = getUserSelection(userChoice);
+    let status = playRound(userSelection, computerSelection);
+    if(status == 1){
+        updatedPlayerScore = updatedPlayerScore + 1;
+    } else if(status == 0){
+        updatedComputerScore = updatedComputerScore + 1;
+    } else {
+        updatedComputerScore = updatedComputerScore;
+        updatedPlayerScore = updatedPlayerScore;
+    }  
+}
+
+playerScore = updatedPlayerScore;
+computerScore = updatedComputerScore;
+
+if(playerScore > computerScore){
+    console.log('player wins');
+} else if(computerScore > playerScore){
+    console.log('player looses');
+} else {
+    console.log('draw');
+}
