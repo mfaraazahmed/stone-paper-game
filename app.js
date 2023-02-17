@@ -2,10 +2,11 @@ let playerScore = 0;
 let computerScore = 0;
 let updatedPlayerScore = 0;
 let updatedComputerScore = 0;
-const readlineSync = require('readline-sync');
+let userPick = null;
+let computerChoice = null;
+let userChoice = null;
 
 function getComputerSelection(){
-    let computerChoice = null;
     const randChoice = Math.ceil(Math.random() * 3);
     console.log(randChoice);
     if(randChoice == 1){
@@ -15,21 +16,31 @@ function getComputerSelection(){
     } else if(randChoice == 3){
         computerChoice = 'scissor';
     }
+    console.log(computerChoice)
     return computerChoice;
 }
 
-function getUserSelection(userChoice){
-    if(userChoice == 1){
-        userChoice = 'rock';
-    } else if(userChoice == 2){
-        userChoice = 'paper';
-    } else if(userChoice == 3){
-        userChoice = 'scissor';
+function getUserSelection(){
+    document.getElementById('options').addEventListener("click", function(event){
+    if(event.target.tagName === "img"){
+        userChoice = parseInt(event.target.getAttribute("data-value"));
+        console.log(userChoice);
     }
-    return userChoice;
+    })
+    if(userChoice == 1){
+        userPick = 'rock';
+    } else if(userChoice == 2){
+        userPick = 'paper';
+    } else if(userChoice == 3){
+        userPick = 'scissor';
+    }
+    console.log(userPick)
+    return userPick;
 }
 
-function playRound(userSelection, computerSelection){
+function playRound(){
+    const computerSelection = getComputerSelection();
+    const userSelection = getUserSelection();
     if(userSelection == 'rock' && computerSelection == 'sciccor' || userSelection == 'paper' && computerSelection == 'rock' || userSelection == 'scissor' && computerSelection == 'paper'){
         return 1;
     } else if(userSelection == 'scissor' && computerSelection == 'rock' || userSelection == 'rock' && computerSelection == 'paper' || userSelection == 'paper' && computerSelection == 'scissor'){
@@ -40,10 +51,7 @@ function playRound(userSelection, computerSelection){
 }
 
 for(let i = 0; i < 5; i++){
-    const computerSelection = getComputerSelection();
-    let userChoice = readlineSync.question('enter 1 for rock\nenter 2 for paper\nenter 3 for scissor\n');
-    const userSelection = getUserSelection(userChoice);
-    let status = playRound(userSelection, computerSelection);
+    let status = playRound();
     if(status == 1){
         updatedPlayerScore = updatedPlayerScore + 1;
     } else if(status == 0){
@@ -57,10 +65,13 @@ for(let i = 0; i < 5; i++){
 playerScore = updatedPlayerScore;
 computerScore = updatedComputerScore;
 
+var textElement = document.createElement("p");
 if(playerScore > computerScore){
-    console.log('player wins');
+    var displayText = 'player wins';
 } else if(computerScore > playerScore){
-    console.log('player looses');
+    var displayText = 'player looses';
 } else {
-    console.log('draw');
+    var displayText = 'draw';
 }
+textElement.textContent = displayText;
+document.getElementById("textContainer").appendChild(textElement);
