@@ -11,4 +11,5 @@ Through this project I was able to brush up my concepts on -
 
 This project is currently live on github pages.
 
-NOTE : This website is made only for desktop views as of now. Will make this website responsive in future after completing the course. ( Recommended to checkout the website on chrome for better user experience )
+NOTE : This website is made only for desktop views as of now. Will make this website responsive in future after completing the course. 
+(Recommended to checkout the website on chrome for better user experience)
