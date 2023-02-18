@@ -1,3 +1,11 @@
+body{
+    background-image: url("/default-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
 #images #options{
     display: flex;
     justify-content: center;
@@ -6,11 +14,99 @@
 }
 
 #images img, #options img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 #options img:hover{
     scale: 1.1;
     cursor: pointer;
 }
+
+#score{
+    margin-top: 1rem;
+    line-height: 1.4rem;
+}
+
+#score, .heading{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 7px;
+}
+
+h1.heading{
+    margin-top: 2rem;
+}
+
+.player .heading{
+    margin-top: 5rem;
+}
+
+.player #options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+}
+
+#images{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10rem;
+}
+
+#images .block{
+    background:rgba(255,255,255,0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+#images .block h2{
+    font-weight: 400;
+    letter-spacing: 7px;
+}
+
+.heading#result{
+    font-size: 3rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    letter-spacing: 15px;
+}
+
+#reset-btn{
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #000;
+    margin: 0 auto;
+    width: min-content;
+}
+
+#reset-btn:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+#reset-btn[disabled] {
+      cursor: not-allowed;
+}
+
+
+
+
+

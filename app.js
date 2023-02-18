@@ -85,10 +85,14 @@ function playRound(){
         if (playerScore > computerScore) {
             result = "You win!";
         } else if (computerScore > playerScore) {
-            result = "CPU wins!";
+            result = "Thanos wins!";
         } else {
             result = "It's a tie!";
         }
+
+        // enabling the btn
+        var resetBtn = document.getElementById("reset-btn");
+        resetBtn.disabled = false;
 
         // Display the result
         const resultDiv = document.getElementById("result");
@@ -104,3 +108,13 @@ function playRound(){
     resultDiv.innerText = "";
   }
 }
+
+// Refresh or resetting the game
+// Get the reset button element
+var resetBtn = document.getElementById("reset-btn");
+// Add an event listener to the reset button
+resetBtn.addEventListener("click", function() {
+  // Reload the current webpage
+    location.reload();
+});
+
