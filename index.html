@@ -8,19 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to the game !</h1>
-    <div id="options">
-        <img src="rock.png" alt="rock" id="rock" data-value="1" onclick="playRound()">
-        <img src="paper.png" alt="paper" id="paper" data-value="2" onclick="playRound()">
-        <img src="scissor.png" alt="scissor" id="scissor" data-value="3" onclick="playRound()">
+    <h1 class="heading">Welcome to the game !</h1>
+    <h2 class="heading">Can you save tony from dying?</h2>
+
+    <div class="player">
+        <h2 class="heading">Pick rock, paper or scissor</h2>
+        <div id="options">
+            <img src="rock.png" alt="rock" id="rock" data-value="1" onclick="playRound()">
+            <img src="paper.png" alt="paper" id="paper" data-value="2" onclick="playRound()">
+            <img src="scissor.png" alt="scissor" id="scissor" data-value="3" onclick="playRound()">
+        </div>
+
     </div>
-    
     <div id="images">
-        <img src="" alt="player choice" id="player-img" style="display: none;">
-        <img src="" alt="computer choice" id="computer-img" style="display: none;">
+        <div class="block">
+            <h2>Your pick</h2>
+            <img src="" alt="player choice" id="player-img" style="display: none;">
+        </div>   
+        <div class="block">
+            <h2>Thanos's pick</h2>
+            <img src="" alt="computer choice" id="computer-img" style="display: none;">
+        </div>
     </div>
     <div id="score"></div>
-    <div id="result"></div>
+    <div id="score"> <button id="reset-btn" disabled>Reset</button> </div>
+    <div class="heading" id="result"></div>
 
     <script src="app.js"></script>
 </body>
