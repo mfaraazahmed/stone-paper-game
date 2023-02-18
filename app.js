@@ -84,8 +84,10 @@ function playRound(){
         let result;
         if (playerScore > computerScore) {
             result = "You win!";
+            document.body.classList.add('winner');
         } else if (computerScore > playerScore) {
             result = "Thanos wins!";
+            document.body.classList.add('lost');
         } else {
             result = "It's a tie!";
         }
@@ -104,6 +106,8 @@ function playRound(){
         computerScore = 0;
     } else {
     // Clear the result display
+    document.body.classList.remove('winner');
+    document.body.classList.remove('lost');
     const resultDiv = document.getElementById("result");
     resultDiv.innerText = "";
   }
