@@ -1,5 +1,5 @@
 body{
-    background-image: url("/default-bg.jpeg");
+    background-image: url("https://mfaraazahmed.github.io/stone-paper-game/default-bg.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,7 +8,7 @@ body{
 }
 
 body.winner {
-    background-image: url('/won.jpeg');
+    background-image: url('https://mfaraazahmed.github.io/stone-paper-game/won.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body.winner {
 }
 
 body.lost{
-    background-image: url('/lost.jpeg');
+    background-image: url('https://mfaraazahmed.github.io/stone-paper-game/lost.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
