@@ -1,15 +1,25 @@
 # stone-paper-game
 
-This project is a part of "The Odin Project" assignment which is linked below.
-https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
+**Stone Paper Scissors Game**
 
-Through this project I was able to brush up my concepts on -
-    1. Using functions.
-    2. DOM manipulation.
-    3. Adding and removing dynamic classes using js.
-    4. Developing logic.
+This is a simple JavaScript implementation of the classic game of Stone Paper Scissors.
 
-This project is currently live on github pages.
+**Concepts used in this project**
 
-NOTE : This website is made only for desktop views as of now. Will make this website responsive in future after completing the course. 
-(Recommended to checkout the website on chrome for better user experience)
+This game uses the following concepts of JavaScript:
+
+- **Variables:** playerScore, computerScore, and round are declared as variables.
+- **Functions:** playRound() is the main function of the game which is called on each click.
+- **Conditional Statements:** The game uses conditional statements such as if-else statements to check the winning and losing conditions.
+- **Event Listeners:** The game uses an event listener to listen to a button click for resetting the game.
+- **DOM Manipulation:** The game manipulates the DOM by changing the images and text on the page based on user actions and game results.
+
+**How to play**
+
+- Click on the image of your choice to select stone, paper, or scissors.
+- After 5 rounds, the game will display the final result: whether you win, lose or draw.
+- To play again, click the reset button.
+
+**PREVIEW**
+[!preview-image](https://github.com/mfaraazahmed/stone-paper-game/blob/main/preview.png)
+
