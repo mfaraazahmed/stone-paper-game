@@ -21,5 +21,5 @@ This game uses the following concepts of JavaScript:
 - To play again, click the reset button.
 
 **PREVIEW**
-[!preview-image](https://github.com/mfaraazahmed/stone-paper-game/blob/main/preview.png)
+![preview-image](https://github.com/mfaraazahmed/stone-paper-game/blob/main/preview.png)
 
